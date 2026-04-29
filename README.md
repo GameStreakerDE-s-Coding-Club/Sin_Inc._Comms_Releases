@@ -4,7 +4,7 @@
 
 > Funk-Simulation für TeamSpeak 3 — Frequenzen, Passwörter, Ducking, Hotkeys und Profile.
 
-[![Download](https://img.shields.io/github/v/release/GameStreakerDE/GS_Comms_Releases?label=Download&style=for-the-badge)](https://github.com/GameStreakerDE/GS_Comms_Releases/releases/latest)
+[![Download](https://img.shields.io/github/v/release/GameStreakerDE-s-Coding-Club/Sin_Inc._Comms_Releases?label=Download&style=for-the-badge)](https://github.com/GameStreakerDE-s-Coding-Club/Sin_Inc._Comms_Releases/releases/latest)
 
 ---
 
@@ -218,6 +218,20 @@ Die globalen Hotkeys werden direkt hier im **Settings Tab** per HotKey-Button ko
 | **Activate Radio on Startup** | Schaltet Radios die beim Schließen des Fensters noch aktiv waren beim nächsten Öffnen automatisch wieder ein |
 | **Forward Radio to Own Channel** | Eingehende Funksignale werden als Sprache in deinen TS3-Kanal weitergeleitet, sodass andere Kanalmitglieder den Funk mithören können |
 | **Radio to Own Channel** | Sorgt dafür dass Kanalmitglieder mithören können was du selbst funkst |
+| **Auf Updates prüfen** | Beim Plugin-Start (max. 1x pro Tag) wird geprüft ob eine neue Version verfügbar ist |
+| **Jetzt prüfen** | Manueller Update-Check — zeigt sofort ob eine neue Version vorliegt |
+
+### Update-Benachrichtigung
+
+Wenn eine neue Version verfügbar ist, erscheint ein Dialog mit drei Optionen:
+
+| Button | Funktion |
+|---|---|
+| **Herunterladen** | Öffnet die GitHub-Release-Seite im Browser zum Download der neuen `.ts3_plugin`-Datei |
+| **Später** | Schließt den Dialog — die Frage erscheint frühestens am nächsten Tag wieder |
+| **Diese Version überspringen** | Diese spezifische Version wird ignoriert, erst beim nächsten Release wird wieder gefragt |
+
+> 🔒 Der Update-Check ruft nur die GitHub-API auf und überträgt keine persönlichen Daten. Er kann jederzeit über die Checkbox **Auf Updates prüfen** deaktiviert werden.
 
 > Änderungen im Settings Tab werden **sofort gespeichert** – kein OK nötig.
 
@@ -242,6 +256,32 @@ Profil in der Liste **anklicken** → alle Einstellungen werden sofort übernomm
 Profil auswählen → **Löschen** oder **Umbenennen**
 
 > 💡 Erstelle Profile für verschiedene Situationen, z.B. "Patrouille", "Basis", "Event".
+
+### Profil exportieren
+
+Mit **Export** lassen sich Profile als `.gsprofile`-Datei (JSON) speichern und an andere weitergeben.
+
+1. **Export** klicken
+2. Im Dialog die gewünschten **Profile** anhaken — pro Profil sind die einzelnen **Radios** (1–8) separat wählbar
+3. Optional **Audio** (Pan, Volume, Ducking) und/oder **Passwörter** mit exportieren
+4. **Verschlüsselung** wählen:
+   - **Keine** — JSON ist klar lesbar
+   - **Nur Passwörter verschlüsseln** — Profilnamen und Frequenzen sichtbar, Passwörter mit AES-256 geschützt
+   - **Gesamte Datei verschlüsseln** — komplette Datei nur mit Passwort lesbar
+5. Bei Verschlüsselung: Export-Passwort vergeben
+6. Speicherort wählen → fertig
+
+> 🔒 Die Verschlüsselung nutzt AES-256-CBC mit PBKDF2-SHA256 Key-Derivation (100.000 Iterationen). Ohne Passwort ist nichts entschlüsselbar.
+
+### Profil importieren
+
+1. **Import** klicken → `.gsprofile`-Datei wählen
+2. Bei verschlüsselten Dateien: Passwort eingeben
+3. Im Preview-Dialog erscheinen alle enthaltenen Profile mit ihren Radios und Frequenzen
+4. **Ziel-Slot** pro Radio wählen — z.B. Radio 1 aus der Datei auf Slot 3 importieren
+5. Bei Namenskollision: **Überschreiben**, **Umbenennen** oder **Überspringen**
+6. **Audio** und **Passwörter** optional übernehmen (nur aktiv wenn in der Datei enthalten)
+7. **Importieren** klicken
 
 ---
 
@@ -324,5 +364,5 @@ Damit das Plugin korrekt funktioniert müssen folgende **TeamSpeak-Rechte** auf 
 
 ---
 
-*Sin Inc. Comms v1.6.8 – by GameStreakerDE*
+*Sin Inc. Comms v1.7.0 – by GameStreakerDE*
 *© 2026 Daniel Meyer (GameStreakerDE) – Alle Rechte vorbehalten. Unbefugtes Kopieren oder Weitergeben ist untersagt.*
