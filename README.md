@@ -364,5 +364,5 @@ Damit das Plugin korrekt funktioniert müssen folgende **TeamSpeak-Rechte** auf 
 
 ---
 
-*Sin Inc. Comms v1.7.1 – by GameStreakerDE*
+*Sin Inc. Comms v1.7.2 – by GameStreakerDE*
 *© 2026 Daniel Meyer (GameStreakerDE) – Alle Rechte vorbehalten. Unbefugtes Kopieren oder Weitergeben ist untersagt.*
