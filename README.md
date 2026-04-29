@@ -25,6 +25,7 @@
 11. [Update & Deinstallation](#11-update--deinstallation)
 12. [Häufige Fragen](#12-häufige-fragen)
 13. [Hinweis für Server-Admins](#13-hinweis-für-server-admins)
+14. [Third-Party-Lizenzen](#14-third-party-lizenzen)
 
 ---
 
@@ -364,5 +365,20 @@ Damit das Plugin korrekt funktioniert müssen folgende **TeamSpeak-Rechte** auf 
 
 ---
 
-*Sin Inc. Comms v1.7.3 – by GameStreakerDE*
+
+## 14. Third-Party-Lizenzen
+
+Dieses Plugin enthält unmodifizierte Bibliotheken Dritter, deren Lizenzen weiterhin gelten:
+
+| Komponente | Lizenz | Hinweis |
+|---|---|---|
+| **Qt 6.7.3** (`Qt6Core`, `Qt6Gui`, `Qt6Widgets`, `Qt6Network`, `Qt6Multimedia`) | LGPLv3 | © The Qt Company Ltd. — [Qt Source](https://download.qt.io/archive/qt/6.7/6.7.3/single/qt-everywhere-src-6.7.3.tar.xz) |
+| **TeamSpeak 3 Plugin SDK** | TeamSpeak Lizenz | © TeamSpeak Systems GmbH |
+| **Windows BCrypt API** | Microsoft Windows | Systembibliothek |
+
+Qt wird **dynamisch gelinkt** (DLLs liegen separat im Plugin-Ordner) und ist somit unter LGPLv3 austauschbar. Die vollständigen Lizenz-Texte liegen dem Plugin-Paket als `THIRD_PARTY_LICENSES.txt` bei.
+
+---
+
+*Sin Inc. Comms v1.7.4 – by GameStreakerDE*
 *© 2026 Daniel Meyer (GameStreakerDE) – Alle Rechte vorbehalten. Unbefugtes Kopieren oder Weitergeben ist untersagt.*

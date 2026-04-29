@@ -24,3 +24,20 @@ dealings in the software.
 For licensing inquiries contact:
   Daniel Meyer (GameStreakerDE)
   Discord: GameStreakerDE
+
+---
+
+THIRD-PARTY COMPONENTS
+
+This Software bundles unmodified third-party libraries that retain their
+original licenses. See THIRD_PARTY_LICENSES.txt (included in the .ts3_plugin
+package) for the full list. Notably:
+
+- Qt 6.7.3 (Qt6Core, Qt6Gui, Qt6Widgets, Qt6Network, Qt6Multimedia)
+  is © The Qt Company Ltd. and used under the GNU Lesser General Public
+  License v3 (LGPLv3). The Qt libraries are dynamically linked and may be
+  replaced with another LGPL-compliant build of Qt 6.x.
+  Source: https://download.qt.io/archive/qt/6.7/6.7.3/
+
+The proprietary terms above apply only to the Software's own code and assets,
+NOT to bundled third-party components.
