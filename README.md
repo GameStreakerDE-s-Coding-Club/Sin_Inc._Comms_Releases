@@ -26,6 +26,7 @@
 12. [Häufige Fragen](#12-häufige-fragen)
 13. [Hinweis für Server-Admins](#13-hinweis-für-server-admins)
 14. [Third-Party-Lizenzen](#14-third-party-lizenzen)
+15. [Datenschutz und Update-Check](#15-datenschutz-und-update-check)
 
 ---
 
@@ -380,5 +381,32 @@ Qt wird **dynamisch gelinkt** (DLLs liegen separat im Plugin-Ordner) und ist som
 
 ---
 
-*Sin Inc. Comms v1.8.0 – by GameStreakerDE*
+## 15. Datenschutz und Update-Check
+
+Das Plugin kontaktiert standardmäßig **einmal pro TS3-Session** die öffentliche GitHub-Releases-API um zu prüfen ob eine neuere Version verfügbar ist:
+
+| Aspekt | Wert |
+|---|---|
+| **URL** | `https://api.github.com/repos/GameStreakerDE-s-Coding-Club/Sin_Inc._Comms_Releases/releases/latest` |
+| **Methode** | HTTPS-GET über Qt6Network (Windows-SChannel TLS) |
+| **Übertragen** | User-Agent (`<plugin-name>/<version>`), IP-Adresse (technisch unvermeidbar) |
+| **Nicht übertragen** | Profile, Frequenzen, Passwörter, TS3-Identitäten, Server-Listen, sonstige PII |
+| **Response-Limit** | 1 MB (DoS-Schutz) |
+
+Der Check kann jederzeit unter **Settings → Auf Updates prüfen** deaktiviert werden.
+
+### Was beim Klick auf **Herunterladen** passiert
+
+Die Release-Seite wird im Standard-Browser geöffnet — **kein automatischer Download oder Install** findet statt. Vor dem Öffnen wird die URL gegen eine Whitelist (`https://github.com`) geprüft.
+
+### Was das Plugin **nicht** tut
+
+- Kein Auto-Update / Auto-Install von DLLs
+- Keine Telemetrie, kein Analytics, kein Crash-Reporting
+- Kein Server-Kontakt außer der einen GitHub-API-Anfrage
+- Keine Datei-Schreibzugriffe außerhalb von `%APPDATA%\TS3Client\plugins\gs_comms\`
+
+---
+
+*Sin Inc. Comms v1.8.1 – by GameStreakerDE*
 *© 2026 Daniel Meyer (GameStreakerDE) – Alle Rechte vorbehalten. Unbefugtes Kopieren oder Weitergeben ist untersagt.*
