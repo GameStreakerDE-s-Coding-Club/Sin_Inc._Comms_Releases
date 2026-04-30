@@ -1,0 +1,82 @@
+================================================================================
+THIRD-PARTY LICENSES
+================================================================================
+
+This Software bundles unmodified third-party libraries.
+This file documents which libraries are used and under which license.
+
+The Software's own source code is licensed under the terms of the LICENSE file
+in the same package (proprietary, all rights reserved).
+
+The third-party components listed below retain their original licenses and are
+not subject to the proprietary license of the Software.
+
+
+================================================================================
+Qt Framework 6.7.3
+================================================================================
+
+Modules used:
+  - Qt6Core             (LGPLv3)
+  - Qt6Gui              (LGPLv3)
+  - Qt6Widgets          (LGPLv3)
+  - Qt6Network          (LGPLv3)
+  - Qt6Multimedia       (LGPLv3)
+
+Qt is © The Qt Company Ltd. and other contributors.
+Used under the terms of the GNU Lesser General Public License v3.
+
+The bundled Qt binaries are unmodified copies from the official Qt 6.7.3
+distribution. The corresponding source code can be obtained from:
+
+  https://download.qt.io/archive/qt/6.7/6.7.3/single/qt-everywhere-src-6.7.3.tar.xz
+
+The full text of the LGPLv3 is available at:
+
+  https://www.gnu.org/licenses/lgpl-3.0.html
+
+You are entitled to relink the Software against a modified version of Qt.
+The Qt libraries are dynamically linked and provided as separate DLL files
+in the plugin directory; replacing them with another LGPL-compliant build
+of Qt 6.x is permitted under LGPLv3.
+
+How to replace the Qt libraries (LGPLv3 §4 compliance):
+
+  1. Close TeamSpeak 3 completely.
+  2. Navigate to the plugin's bundled-DLL directory:
+       %APPDATA%\TS3Client\plugins\gs_comms\
+     (this is per-user; the plugin loads its Qt copy exclusively from here)
+  3. Replace any of the bundled Qt6 DLLs with your own Qt 6.x build:
+       Qt6Core.dll, Qt6Gui.dll, Qt6Widgets.dll, Qt6Network.dll,
+       Qt6Multimedia.dll, platforms\qwindows.dll, tls\qschannelbackend.dll
+  4. Start TeamSpeak 3. The plugin will load the replaced DLLs from this
+     directory at startup. The plugin uses absolute paths and does NOT
+     pin DLL signatures or hashes - any binary-compatible Qt 6.x build works.
+
+The plugin uses LoadLibraryEx with LOAD_LIBRARY_SEARCH_USER_DIRS to harden
+against DLL hijacking from PATH or the current working directory; this is a
+security measure and does NOT impede LGPLv3-required replaceability of the
+Qt libraries themselves.
+
+
+================================================================================
+TeamSpeak 3 Plugin SDK
+================================================================================
+
+The TeamSpeak 3 plugin headers are © TeamSpeak Systems GmbH and used solely
+for binary compatibility with the TeamSpeak 3 client application.
+See https://www.teamspeak.com/ for license terms of the SDK.
+
+
+================================================================================
+Windows BCrypt API (CNG)
+================================================================================
+
+Used via system library bcrypt.lib for AES-256-CBC encryption and
+PBKDF2 key derivation. Part of Microsoft Windows; no separate license.
+
+
+================================================================================
+
+If you have questions regarding the licensing of bundled components,
+please contact the author of the Software (see LICENSE).
