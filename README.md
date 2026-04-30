@@ -380,5 +380,5 @@ Qt wird **dynamisch gelinkt** (DLLs liegen separat im Plugin-Ordner) und ist som
 
 ---
 
-*Sin Inc. Comms v1.7.6 – by GameStreakerDE*
+*Sin Inc. Comms v1.8.0 – by GameStreakerDE*
 *© 2026 Daniel Meyer (GameStreakerDE) – Alle Rechte vorbehalten. Unbefugtes Kopieren oder Weitergeben ist untersagt.*
