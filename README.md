@@ -408,5 +408,5 @@ Die Release-Seite wird im Standard-Browser geöffnet — **kein automatischer Do
 
 ---
 
-*Sin Inc. Comms v1.8.2 – by GameStreakerDE*
+*Sin Inc. Comms v1.8.3 – by GameStreakerDE*
 *© 2026 Daniel Meyer (GameStreakerDE) – Alle Rechte vorbehalten. Unbefugtes Kopieren oder Weitergeben ist untersagt.*
